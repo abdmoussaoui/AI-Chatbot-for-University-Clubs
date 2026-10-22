@@ -185,3 +185,4 @@ The backend exposes the following API endpoints:
 - **GET /static/plots/{plot_name}.png**
   - Serves the generated recommendation plot images.
 # AI-Chatbot-for-University-Clubs
+# AI-Chatbot-for-University-Clubs

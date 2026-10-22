@@ -1,0 +1,44 @@
+{
+  "clubs": [
+    {
+      "name": "Club AI & Dev Community FSBM",
+      "description": "Ce club est le cœur de l'innovation logicielle à la FSBM. Nous explorons l'intelligence artificielle, le machine learning et le développement web/mobile. Idéal pour ceux qui aiment coder, collaborer sur des projets concrets (de la conception au déploiement) et se tenir au courant des dernières avancées technologiques. Nous organisons des workshops, des hackathons et des sessions de codage en groupe."
+    },
+    {
+      "name": "Club Digisec Digital and Cybersecurity FSBM",
+      "description": "Plonge dans le monde de la cybersécurité avec nous. Nous couvrons des sujets comme le pentesting (hacking éthique), la sécurité des réseaux, la cryptographie et la protection des données. C'est un club très pratique où tu apprendras à défendre des systèmes et à identifier des vulnérabilités à travers des compétitions CTF (Capture The Flag) et des ateliers pratiques. Parfait pour les futurs experts en sécurité."
+    },
+    {
+      "name": "Club Criot et Robotique FSBM",
+      "description": "Si tu aimes construire, souder et programmer des objets physiques, ce club est pour toi. Nous travaillons sur des projets de robotique et d'Internet des Objets (IoT) en utilisant des plateformes comme Arduino et Raspberry Pi. C'est un mélange parfait entre électronique, mécanique et programmation. Viens créer des robots, des drones ou des systèmes automatisés avec nous."
+    },
+    {
+      "name": "Blockchain Pioneers Club FSBM",
+      "description": "Explore la technologie révolutionnaire de la blockchain. Nous allons au-delà des cryptomonnaies pour étudier les contrats intelligents, les applications décentralisées (DApps) et l'impact de la blockchain sur la finance et l'industrie. C'est un club pour les visionnaires qui veulent comprendre et construire la prochaine génération d'internet."
+    },
+    {
+      "name": "Club Éducation Sportive FSBM",
+      "description": "Pour tous les passionnés de sport, que vous soyez athlète confirmé ou débutant. Nous organisons des entraînements réguliers dans plusieurs disciplines (football, basketball, etc.), des tournois inter-classes et des sessions de fitness pour le bien-être général. L'objectif est de promouvoir un style de vie sain, l'esprit d'équipe et le dépassement de soi."
+    },
+    {
+      "name": "Club Ctrl-Art FSBM",
+      "description": "Libère ta créativité à la croisée de l'art et de la technologie. Nous explorons le design graphique, l'art numérique, le montage vidéo et l'animation. C'est un espace pour apprendre à maîtriser des outils comme Photoshop, Illustrator ou Blender, et pour collaborer sur des projets visuels innovants. Idéal pour les esprits créatifs qui aiment le digital."
+    },
+    {
+      "name": "Club Cinéma FSBM",
+      "description": "Passionné par le 7ème art ? Ce club est dédié à l'analyse de films, aux débats sur les techniques cinématographiques et à l'écriture de scénarios. Nous organisons des projections de films cultes et des ateliers de critique. C'est un lieu pour ceux qui aiment décortiquer une histoire et comprendre comment les films sont faits, plus que pour la production pratique."
+    },
+    {
+      "name": "Club Innovation, Créativité et Entrepreneuriat FSBM",
+      "description": "Tu as une idée de start-up ? Ce club est un incubateur pour tes ambitions. Nous t'aidons à développer ton esprit d'entreprise, à structurer un business plan et à apprendre les bases du marketing et de la finance. Nous connectons les étudiants avec des mentors et organisons des compétitions de pitch. Pour les futurs fondateurs et innovateurs."
+    },
+    {
+      "name": "Enactus FSBM",
+      "description": "Combine entrepreneuriat et impact social. Enactus se concentre sur la création de projets durables qui répondent à des défis sociaux ou environnementaux dans notre communauté. Si tu veux utiliser tes compétences pour faire une différence positive dans le monde, tout en apprenant à gérer un projet de A à Z, ce club est fait pour toi."
+    },
+    {
+      "name": "Club Astronomie Eclipse FSBM",
+      "description": "Lève les yeux vers le ciel et explore les mystères de l'univers. Nous organisons des soirées d'observation avec des télescopes, des conférences sur l'astrophysique et des discussions sur les dernières découvertes spatiales. Parfait pour les curieux qui sont fascinés par les étoiles, les planètes et les galaxies."
+    }
+  ]
+}

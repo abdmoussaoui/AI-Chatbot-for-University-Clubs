@@ -1,188 +1,369 @@
-# FSBM Club Advisor Chatbot
+# 🤖 FSBM Club Advisor — AI-Powered University Club Recommendation Chatbot
 
-Welcome to the FSBM Club Advisor Chatbot! This is an intelligent, conversational agent designed to help students at the Faculty of Sciences Ben M'sik (FSBM) discover the perfect student club based on their interests, skills, and aspirations.
+An intelligent, AI-powered conversational assistant designed to help students at the **Faculty of Sciences Ben M'Sik (FSBM)** discover student clubs that best match their interests, skills, and personal aspirations.
 
-The application features a modern React/TypeScript frontend and a powerful Python/FastAPI backend that leverages a Retrieval-Augmented Generation (RAG) architecture to provide accurate and personalized recommendations.
-
-## Features
-
-- **Conversational AI**: Understands natural language to identify user interests and goals.
-- **Personalized Recommendations**: Suggests the most suitable club from a predefined list.
-- **RAG Architecture**: Provides responses based on factual club data (`clubs.json`) to avoid hallucinations and ensure accuracy.
-- **Dynamic Visualization**: Generates a custom bar chart to visually represent club compatibility scores after a recommendation is made.
-- **Interactive & Responsive UI**: A clean and modern chat interface built with React and TypeScript.
-- **Full-stack Application**: A clear separation between the frontend and backend services.
-
-## Project Structure
-
-The project is organized into two main directories:
-
-```bash
-├── backend/ # FastAPI application (Python)
-│ ├── data/
-│ │ └── clubs.json
-│ ├── static/
-│ │ └── plots/
-│ ├── main.py
-│ ├── rag_chain.py
-│ ├── visualization.py
-│ ├── requirements.txt
-│ └── .env
-└── frontend/ # React + TypeScript application
-├── src/
-├── package.json
-└── ...
-```
-
-## Tech Stack
-
-### Backend
-
-- **Framework**: **FastAPI**
-- **Language**: **Python 3.9+**
-- **AI & Machine Learning**:
-  - **LangChain**: For orchestrating the RAG pipeline.
-  - **OpenRouter**: To access LLMs like Mistral 7B for generation.
-  - **Hugging Face**: For `sentence-transformers` embeddings.
-  - **FAISS**: For efficient similarity search in the vector store.
-- **Data Visualization**: **Matplotlib**
-- **Web Server**: **Uvicorn**
-
-### Frontend
-
-- **Framework**: **React**
-- **Language**: **TypeScript**
-- **Build Tool**: **Vite**
-- **Styling**: **Tailwind CSS**
-- **API Communication**: **Axios**
-
-## Setup and Installation
-
-Follow these steps to get the project running on your local machine.
-
-### Prerequisites
-
-- **Node.js** (v18 or later) and **npm**
-- **Python** (v3.9 or later) and **pip**
-- A free **OpenRouter API Key** from [openrouter.ai](https://openrouter.ai).
+Built as a full-stack application, the system combines a modern **React and TypeScript frontend** with a **Python/FastAPI backend**, leveraging **Retrieval-Augmented Generation (RAG)**, semantic search, and Large Language Models (LLMs) to deliver accurate, context-aware, and personalized club recommendations.
 
 ---
 
-### 1. Backend Setup (Python)
+## ✨ Key Features
 
-First, set up and run the backend server.
+- **Conversational AI:** Interacts naturally with students to understand their interests, skills, preferences, and goals.
+- **Personalized Club Recommendations:** Identifies and recommends the most suitable student clubs based on individual profiles.
+- **Retrieval-Augmented Generation (RAG):** Grounds AI-generated responses in verified club information stored in `clubs.json`, reducing hallucinations and improving reliability.
+- **Semantic Search:** Uses vector embeddings and FAISS to retrieve relevant club information based on the meaning of student queries.
+- **Dynamic Data Visualization:** Automatically generates bar charts illustrating club compatibility scores after recommendations.
+- **Modern & Responsive Interface:** Provides an intuitive, interactive chat experience developed with React, TypeScript, and Tailwind CSS.
+- **Full-Stack Architecture:** Separates frontend and backend services to improve organization and maintainability.
+
+---
+
+## 🏗️ Project Architecture
+
+The application follows a modular, full-stack architecture organized into two main components:
+
+- **Backend:** Handles conversational AI, RAG processing, semantic retrieval, recommendation generation, API communication, and data visualization.
+- **Frontend:** Provides a responsive user interface for interacting with the chatbot and displaying recommendations.
+
+### Project Structure
 
 ```bash
-# 1. Navigate to the backend directory
-
-cd backend
-
-# 2. Create and activate a virtual environment
-
-# On Windows
-
-python -m venv venv
-.\venv\Scripts\activate
-
-# On macOS/Linux
-
-python3 -m venv venv
-source venv/bin/activate
-
-# 3. Install the required Python packages from requirements.txt
-
-pip install -r requirements.txt
-
-# 4. Create a .env file in the `backend` directory
-
-touch .env
-
-# 5. Add your environment variables to the .env file
-
-# See the "Environment Variables" section below for the content.
+AI-Chatbot-for-University-Clubs/
+│
+├── backend/                    # Python / FastAPI backend
+│   ├── data/
+│   │   └── clubs.json          # Student clubs dataset
+│   ├── static/
+│   │   └── plots/              # Generated visualization charts
+│   ├── main.py                 # API entry point
+│   ├── rag_chain.py            # RAG pipeline implementation
+│   ├── visualization.py        # Recommendation visualization
+│   ├── requirements.txt        # Python dependencies
+│   └── .env                    # Environment configuration
+│
+└── frontend/                   # React / TypeScript frontend
+    ├── src/                    # Frontend source code
+    ├── package.json            # JavaScript dependencies
+    └── ...
 ```
 
-Now, run the backend server:
+---
 
-# Start the FastAPI server with auto-reload
+## 🛠️ Technology Stack
+
+### Backend
+
+| Technology | Purpose |
+|---|---|
+| Python 3.9+ | Backend programming language |
+| FastAPI | REST API development |
+| LangChain | RAG pipeline orchestration |
+| OpenRouter | Access to LLMs such as Mistral 7B |
+| Hugging Face | Sentence-transformer embedding models |
+| FAISS | Vector storage and semantic similarity search |
+| Matplotlib | Recommendation score visualization |
+| Uvicorn | ASGI application server |
+
+### Frontend
+
+| Technology | Purpose |
+|---|---|
+| React | Interactive user interface |
+| TypeScript | Type-safe frontend development |
+| Vite | Fast development and build tooling |
+| Tailwind CSS | Responsive UI styling |
+| Axios | Frontend–backend API communication |
+
+---
+
+## 🚀 Getting Started
+
+Follow the instructions below to install and run the application locally.
+
+### Prerequisites
+
+Make sure the following tools are installed:
+
+- **Node.js 18+** and npm
+- **Python 3.9+** and pip
+- An **OpenRouter API key**, available at [openrouter.ai](https://openrouter.ai)
+
+### 1. Backend Installation
+
+Navigate to the backend directory:
+
+```bash
+cd backend
+```
+
+**Create a Python virtual environment:**
+
+```bash
+python -m venv venv
+```
+
+**Activate the virtual environment:**
+
+Windows:
+
+```bash
+.\venv\Scripts\activate
+```
+
+macOS / Linux:
+
+```bash
+source venv/bin/activate
+```
+
+On macOS or Linux, you can use `python3` instead of `python` when creating the virtual environment.
+
+**Install the Python dependencies:**
+
+```bash
+pip install -r requirements.txt
+```
+
+**Configure the environment variables:**
+
+Create a `.env` file inside the `backend` directory.
+
+macOS / Linux:
+
+```bash
+touch .env
+```
+
+Windows PowerShell:
+
+```powershell
+New-Item .env -ItemType File
+```
+
+Add the required configuration described in the **Environment Variables** section.
+
+**Start the backend server:**
 
 ```bash
 uvicorn main:app --reload
 ```
 
-The backend API will be available at http://127.0.0.1:8000. The server will automatically load all necessary models on startup.
+The backend API will be accessible at:
 
-### 2. Frontend Setup (React + TypeScript)
+**http://127.0.0.1:8000**
 
-In a new terminal window, set up and run the frontend application.
+The server automatically loads the necessary models and initializes the retrieval system at startup.
+
+### 2. Frontend Installation
+
+Open a new terminal and navigate to the frontend directory from the project root:
 
 ```bash
-# 1. Navigate to the frontend directory from the project root
-
 cd frontend
+```
 
-# 2. Install the required npm packages
+**Install the required dependencies:**
 
+```bash
 npm install --legacy-peer-deps
+```
 
-# 3. Start the frontend development server
+**Start the development server:**
 
+```bash
 npm run dev
 ```
 
-The frontend application will be available at http://localhost:5173. Open this URL in your browser to start chatting!
+The frontend application will be accessible at:
 
-## Environment Variables
+**http://localhost:5173**
 
-The backend requires a .env file for configuration. Create a file named .env inside the backend directory and add the following content:
+Open this address in your browser to interact with the AI-powered club advisor.
 
-# Your API key from https://openrouter.ai
+---
 
+## ⚙️ Environment Variables
+
+The backend requires a `.env` file to manage API credentials and application configuration.
+
+Create `backend/.env` and add the following variables:
+
+```env
+# OpenRouter API authentication
 OPENROUTER_API_KEY="your_openrouter_api_key"
 
-# The URL of your frontend application for CORS policy
-
+# Frontend origin allowed by the CORS policy
 CORS_ORIGINS="http://localhost:5173"
 
-# Required for OpenRouter API requests (as per their policy)
-
-# You can leave these as default for local development
-
+# OpenRouter application identification
 SITE_URL="http://localhost:8000"
 SITE_NAME="FSBM Club Assistant"
+```
 
-- **OPENROUTER_API_KEY**: Required. Your unique API key to use the language model.
-- **CORS_ORIGINS**: Required. The URL where your frontend is running. This allows the frontend to make requests to the backend.
-- **SITE_URL & SITE_NAME**: Used as HTTP Referer and Title headers in API calls to OpenRouter.
+### Configuration Details
 
-## How It Works: The RAG Architecture
+| Variable | Description |
+|---|---|
+| `OPENROUTER_API_KEY` | API key used to authenticate requests to the language model through OpenRouter. |
+| `CORS_ORIGINS` | Specifies the frontend origin authorized to communicate with the backend. |
+| `SITE_URL` | Application URL used as the HTTP Referer header in OpenRouter requests. |
+| `SITE_NAME` | Application name used as the Title header in OpenRouter requests. |
 
-The chatbot uses a Retrieval-Augmented Generation (RAG) pipeline to provide intelligent and context-aware responses.
+**Security Note:** Keep your `.env` file private and never expose your API keys in a public GitHub repository.
 
-- **Data Loading**: At startup, the server loads club information from `backend/data/clubs.json`.
-- **Vectorization**: The description of each club is converted into a numerical vector (embedding) using a `sentence-transformers` model from Hugging Face. These vectors are stored in a FAISS in-memory vector store for fast retrieval.
-- **User Query & Retrieval**: When a user sends a message, the backend searches the FAISS vector store to find the clubs whose descriptions are most semantically similar to the user's query and conversation history.
-- **Augmentation & Generation**: A detailed prompt is constructed containing:
-  - The user's original query.
-  - The recent conversation history.
-  - The retrieved club data (the "augmented" context).
-  - Specific instructions on how to behave and format the output.
-  - This complete prompt is sent to the Mistral 7B model via OpenRouter.
-- **Response & Visualization**:
-  - The LLM returns a structured JSON response, either asking a clarifying question or recommending a specific club.
-  - If a recommendation is made, the backend uses Matplotlib to generate a bar chart showing compatibility scores. This chart is saved as an image, and its URL is sent to the frontend along with the text response.
+---
 
-## API Endpoints
+## 🧠 How It Works — RAG Pipeline
 
-The backend exposes the following API endpoints:
+The chatbot relies on a **Retrieval-Augmented Generation (RAG)** architecture to combine semantic information retrieval with the natural language generation capabilities of an LLM.
 
-- **POST /chat**
-  - The main endpoint for interacting with the chatbot.
-  - **Request Body**: `{ "message": "...", "session": [...] }`
-  - **Response Body**: `{ "response": "...", "recommendation": {...}, "club_scores": {...}, "plot_url": "..." }`
-- **GET /clubs**
-  - Returns a JSON list of all available clubs from `clubs.json`.
-- **GET /static/plots/{plot_name}.png**
-  - Serves the generated recommendation plot images.
-# AI-Chatbot-for-University-Clubs
-# AI-Chatbot-for-University-Clubs
+This approach ensures that club recommendations are grounded in available university club information rather than relying exclusively on the model's pretrained knowledge.
+
+### Step 1 — Data Loading
+
+When the backend starts, club information is loaded from:
+
+`backend/data/clubs.json`
+
+This dataset serves as the knowledge base for the recommendation system.
+
+### Step 2 — Embedding Generation & Vector Storage
+
+Each club description is transformed into a numerical vector representation using a **sentence-transformers** embedding model from Hugging Face.
+
+The generated embeddings are stored in an **in-memory FAISS vector store**, enabling efficient semantic similarity search.
+
+### Step 3 — User Query & Semantic Retrieval
+
+When a student submits a message:
+
+1. The backend processes the user's request and relevant conversation history.
+2. FAISS performs semantic similarity search against the stored club embeddings.
+3. The system retrieves the club descriptions most relevant to the student's interests and objectives.
+
+Unlike traditional keyword matching, semantic retrieval helps identify meaningful relationships between student preferences and club descriptions.
+
+### Step 4 — Context Augmentation & Response Generation
+
+The retrieved information is combined into a structured prompt containing:
+
+- The student's original query.
+- Recent conversation history.
+- Relevant club information retrieved from FAISS.
+- Specific instructions governing the assistant's behavior and response format.
+
+This enriched prompt is sent to **Mistral 7B through OpenRouter** to generate an informed, context-aware response.
+
+### Step 5 — Personalized Recommendations
+
+The language model returns a structured JSON response based on the conversation context.
+
+Depending on the information available, the chatbot can:
+
+- Ask follow-up questions to better understand the student's preferences.
+- Recommend a specific club that matches the student's interests and aspirations.
+
+### Step 6 — Recommendation Visualization
+
+When a club recommendation is generated:
+
+1. The backend processes club compatibility scores.
+2. Matplotlib creates a customized bar chart displaying these scores.
+3. The generated chart is saved as an image in `backend/static/plots/`.
+4. The backend returns the chart URL alongside the chatbot response.
+5. The frontend displays the recommendation and its associated visualization.
+
+This provides students with both a conversational explanation and a visual representation of club compatibility.
+
+### RAG Workflow Overview
+
+```text
+                  Student Query
+                       |
+                       v
+              FastAPI Backend
+                       |
+                       v
+           Query & Context Processing
+                       |
+                       v
+             Semantic Retrieval
+                (FAISS Index)
+                       ^
+                       |
+              Club Embeddings
+          (Hugging Face Models)
+                       ^
+                       |
+               clubs.json Dataset
+                       |
+                       v
+             Retrieved Club Data
+                       |
+                       v
+             Prompt Augmentation
+          (Query + History + Context)
+                       |
+                       v
+              LLM via OpenRouter
+                  (Mistral 7B)
+                       |
+                       v
+              Structured Response
+                       |
+               +-------+-------+
+               |               |
+               v               v
+        Clarification     Recommendation
+          Question              |
+                                v
+                       Matplotlib Chart
+                                |
+                                v
+                      Response + Plot URL
+                                |
+                                v
+                       React Frontend
+```
+
+---
+
+## 🔌 API Endpoints
+
+The FastAPI backend provides REST endpoints for chatbot interaction, club information retrieval, and visualization access.
+
+### `POST /chat`
+
+Main endpoint responsible for conversational interactions and personalized club recommendations.
+
+**Request body:**
+
+```json
+{
+  "message": "...",
+  "session": []
+}
+```
+
+**Response body:**
+
+```json
+{
+  "response": "...",
+  "recommendation": {},
+  "club_scores": {},
+  "plot_url": "..."
+}
+```
+
+The response contains the chatbot's message, recommendation information, club compatibility scores, and the generated visualization URL when applicable.
+
+### `GET /clubs`
+
+Retrieves the list of available student clubs.
+
+**Data source:**
+
+`backend/data/clubs.json`
+
+Returns the stored
